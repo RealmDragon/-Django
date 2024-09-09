@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.text import slugify
 
 class Type(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название Жанра', help_text='Введите Название Жанра')
