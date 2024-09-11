@@ -1,11 +1,16 @@
 from django.urls import path, include
 from games.apps import GamesConfig
-from games.view import games_list, games
+from games.views import GameListView, GameDetailView, GameCreateView, GameUpdateView, GameDeleteView
+
+from project.games.views import GameDeleteView
 
 games = GamesConfig.name
 
 urlpatterns = [
-    path('', game_list, name="games_list"),
-    path('games_media/<int:pk>/', game_detail, name="games_detail")
+    path('', GameListView.as_view(), name="games_list"),
+    path('games/<int:pk>/', DetailView.as_view(), name="games_detail"),
+    path('games/create', GameCreateView.as_view(), name="games_create"),
+    path('games/<int:pk>/update', GameUpdateView.as_view(), name="games_update")
+    path('games/<int:pk>/delete/', GameDeleteView.as_view(), name="games_delete")
 
 ]
