@@ -27,7 +27,8 @@ class GameUpdateView(UpdateView):
     success_url = reverse_lazy('games:games_list')
 
     def get_success_url(self):
-        return reverse('games:games_detail', args=[self.object.kwargs.get('pk')])
+        return reverse('games:games_detail', args=[self.object.pk])
+
 class GameDeleteView(DeleteView):
     model = Game
     success_url = reverse_lazy('games:games_list')
