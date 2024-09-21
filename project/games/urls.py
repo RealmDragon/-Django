@@ -1,8 +1,6 @@
 from django.urls import path, include
-from games.apps import GamesConfig
-from games.views import GameListView, GameDetailView, GameCreateView, GameUpdateView, GameDeleteView
-
-from project.games.views import GameDeleteView
+from project.games.apps import GamesConfig
+from project.games.views import GameListView, GameDetailView, GameCreateView, GameUpdateView, GameDeleteView
 
 games = GamesConfig.name
 

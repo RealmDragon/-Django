@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Game, Type
+from project.games.models import Game, Type
 
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
